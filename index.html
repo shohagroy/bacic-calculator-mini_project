@@ -19,16 +19,20 @@
         height: 50vh;
         width: 30vh;
         display: grid;
-        grid-template-columns: auto auto auto;
-        grid-template-rows: auto auto auto auto;
+        grid-gap: 2px;
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .output{
         grid-column-start: 1;
-        grid-column-end: -1;
+        grid-column-end: 5;
       }
     </style>
   </head>
   <body>
     <div class="main-conrainer">
-      <input type="text" />
+      <input type="text" class="output" disabled/>
+
       <button>1</button>
       <button>2</button>
       <button>3</button>
