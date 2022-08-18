@@ -1,8 +1,12 @@
 
 
-console.log('hello world')
+function calculate(value){
+    
+    form.display.value = form.display.value + value;
 
-const outPutScreen = document.getElementById('output-value');
-const outPutValue = outPutScreen.value;
-const outPutScreenNumber = parseFloat(outPutValue);
-console.log(outPutValue);
+
+}
+
+function clearDisplay(){
+    form.display.value = '';
+}

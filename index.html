@@ -5,54 +5,237 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JavaScript Basic Calculator</title>
+
+    <!-- fontawesome added link  -->
+    <script
+      src="https://kit.fontawesome.com/c856552904.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- google font added link  -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Orbitron"
+      rel="stylesheet"
+      type="text/css"
+    />
+
     <style>
-      body {
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      header {
+        height: 10vh;
+        background-color: rgba(219, 209, 255, 0.567);
+        text-align: center;
+        padding: 30px;
+        font-family: Arial, Helvetica, sans-serif;
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 100vh;
-        width: 100vh;
-        background-color: aqua;
+      }
+      main {
+        height: 80vh;
+        width: 100%;
+        background-color: azure;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
       .main-conrainer {
         background-color: white;
-        height: 50vh;
-        width: 30vh;
+        padding: 30px 10px;
+        border: 5px solid black;
+        height: 400px;
+        width: 320px;
         display: grid;
         grid-gap: 2px;
         grid-template-columns: repeat(4, 1fr);
       }
 
       .output {
+        margin: 5px;
         grid-column-start: 1;
         grid-column-end: 5;
+        font-size: 30px;
+        background-color: white;
+        text-align: right;
+        font-size: 60px;
+        height: 60px;
+        border-radius: 8px;
+      }
+      .input {
+        cursor: pointer;
+        color: black;
+        font-size: 20px;
+        border: none;
+        font-size: 50px;
+        border: 1px solid black;
+        transition: all 0.5s;
+      }
+
+      .input:hover {
+        background-color: rgba(205, 192, 255, 0.567);
+        /* border: 1px solid black; */
+        box-shadow: 0px 0px 5px rgba(219, 209, 255, 0.567);
+      }
+      footer {
+        height: 10vh;
+        width: 100%;
+        background-color: #a5d5f8;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .followers {
+        color: rgb(79, 79, 79);
+        font-size: 30px;
+        margin: 10px;
+        transition: all 0.4s;
+      }
+      .followers:hover {
+        font-size: 50px;
+        color: black;
       }
     </style>
   </head>
   <body>
-    <div class="main-conrainer">
-      <input id="output-value" type="text" class="output" disabled />
+    <header>
+      <h1>JavaScript Mini Project - Basic Calculator</h1>
+    </header>
+    <main>
+      <form action="" name="form" class="main-conrainer">
+        <input
+          id="output-value"
+          type="text"
+          class="output"
+          name="display"
+          placeholder="0"
+          disabled
+        />
 
-      <button class="key-value">7</button>
-      <button class="key-value">8</button>
-      <button class="key-value">9</button>
-      <button class="operator-value">/</button>
+        <input
+          value="7"
+          type="button"
+          class="input"
+          onclick="calculate(this.value)"
+        />
+        <input
+          value="8"
+          type="button"
+          class="input"
+          onclick="calculate(this.value)"
+        />
+        <input
+          value="9"
+          type="button"
+          class="input"
+          onclick="calculate(this.value)"
+        />
 
-      <button class="key-value">4</button>
-      <button class="key-value">5</button>
-      <button class="key-value">6</button>
-      <button class="operator-value">X</button>
+        <input value="C" type="button" class="input" onclick="clearDisplay()" />
 
-      <button class="key-value">1</button>
-      <button class="key-value">2</button>
-      <button class="key-value">3</button>
-      <button class="operator-value">-</button>
+        <input
+          value="4"
+          type="button"
+          class="input"
+          onclick="calculate(this.value)"
+        />
+        <input
+          value="5"
+          type="button"
+          class="input"
+          onclick="calculate(this.value)"
+        />
+        <input
+          value="6"
+          type="button"
+          class="input"
+          onclick="calculate(this.value)"
+        />
+        <input
+          value="/"
+          type="button"
+          class="input"
+          onclick="calculate(this.value)"
+        />
 
-      <button class="key-value">0</button>
-      <button class="key-value">.</button>
-      <button class="operator-value">=</button>
-      <button class="operator-value">+</button>
-    </div>
+        <input
+          value="1"
+          type="button"
+          class="input"
+          onclick="calculate(this.value)"
+        />
+        <input
+          value="2"
+          type="button"
+          class="input"
+          onclick="calculate(this.value)"
+        />
+        <input
+          value="3"
+          type="button"
+          class="input"
+          onclick="calculate(this.value)"
+        />
+        <input
+          value="-"
+          type="button"
+          class="input"
+          onclick="calculate(this.value)"
+        />
+
+        <input
+          value="0"
+          type="button"
+          class="input"
+          onclick="calculate(this.value)"
+        />
+        <input
+          value="."
+          type="button"
+          class="input"
+          onclick="calculate(this.value)"
+        />
+        <input
+          value="="
+          type="button"
+          class="input"
+          onclick="display.value = eval(display.value)"
+        />
+        <input
+          value="+"
+          type="button"
+          class="input"
+          onclick="calculate(this.value)"
+        />
+      </form>
+    </main>
+
+    <footer>
+      <a
+        href="https://www.facebook.com/shohagroy.7771/"
+        class="followers"
+        target="_blank"
+        ><i class="fa-brands fa-facebook"></i
+      ></a>
+      <a
+        href="https://www.instagram.com/shohagroy.7771/"
+        class="followers"
+        target="_blank"
+        ><i class="fa-brands fa-square-instagram"></i
+      ></a>
+      <a
+        href="https://www.linkedin.com/in/shohag-roy-850a82236/"
+        class="followers"
+        target="_blank"
+        ><i class="fa-brands fa-linkedin"></i
+      ></a>
+      <a href="https://github.com/shohagroy" class="followers" target="_blank"
+        ><i class="fa-brands fa-square-github"></i
+      ></a>
+    </footer>
+
     <script src="script.js"></script>
   </body>
 </html>
