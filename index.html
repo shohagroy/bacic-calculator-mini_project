@@ -49,7 +49,7 @@
         height: 400px;
         width: 320px;
         display: grid;
-        grid-gap: 2px;
+        grid-gap: 5px;
         grid-template-columns: repeat(4, 1fr);
       }
 
@@ -75,10 +75,20 @@
         transition: all 0.5s;
       }
 
-      .clear-btn{
+      .clear-btn {
         background-color: rgba(255, 214, 214, 0.63);
+        grid-column-start: 1;
+        grid-column-end: 3;
       }
-      .operator{
+
+      .equal {
+        grid-row-start: 5;
+        grid-row-end: 7;
+
+        grid-column-start: 4;
+        grid-column-end: 4;
+      }
+      .operator {
         background-color: rgb(231, 241, 255);
       }
 
@@ -123,6 +133,26 @@
         />
 
         <input
+          value="C"
+          type="button"
+          class="input clear-btn"
+          onclick="clearDisplay()"
+        />
+        <input
+          value="/"
+          type="button"
+          class="input operator"
+          onclick="calculate(this.value)"
+        />
+
+        <input
+          value="*"
+          type="button"
+          class="input operator"
+          onclick="calculate(this.value)"
+        />
+
+        <input
           value="7"
           type="button"
           class="input"
@@ -140,8 +170,12 @@
           class="input"
           onclick="calculate(this.value)"
         />
-
-        <input value="C" type="button" class="input clear-btn" onclick="clearDisplay()" />
+        <input
+          value="-"
+          type="button"
+          class="input operator"
+          onclick="calculate(this.value)"
+        />
 
         <input
           value="4"
@@ -161,8 +195,9 @@
           class="input"
           onclick="calculate(this.value)"
         />
+
         <input
-          value="/"
+          value="+"
           type="button"
           class="input operator"
           onclick="calculate(this.value)"
@@ -187,10 +222,10 @@
           onclick="calculate(this.value)"
         />
         <input
-          value="-"
+          value="="
           type="button"
-          class="input operator"
-          onclick="calculate(this.value)"
+          class="input operator equal"
+          onclick="display.value = eval(display.value)"
         />
 
         <input
@@ -199,20 +234,16 @@
           class="input"
           onclick="calculate(this.value)"
         />
+
         <input
-          value="."
+          value="00"
           type="button"
-          class="input operator"
+          class="input"
           onclick="calculate(this.value)"
         />
+
         <input
-          value="="
-          type="button"
-          class="input operator"
-          onclick="display.value = eval(display.value)"
-        />
-        <input
-          value="+"
+          value="."
           type="button"
           class="input operator"
           onclick="calculate(this.value)"
